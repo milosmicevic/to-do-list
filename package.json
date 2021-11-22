@@ -1,0 +1,23 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "To do list App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milosmicevic/to-do-list.git"
+  },
+  "author": "Milos Micevic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milosmicevic/to-do-list/issues"
+  },
+  "homepage": "https://github.com/milosmicevic/to-do-list#readme",
+  "devDependencies": {
+    "webpack": "^5.64.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
