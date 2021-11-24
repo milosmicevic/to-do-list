@@ -22,43 +22,41 @@
           <img src="images/favicon.ico" alt="logo" class="logo-image" />
           <span class="logo-text">Assistant</span>
         </div>
-        <nav id="main-nav">
-          <ul id="main-nav-list">
-            <li><button class="nav-btn">Tasks</button></li>
-            <li><button class="nav-btn">Projects</button></li>
-            <li><button class="nav-btn">About</button></li>
-          </ul>
-        </nav>
       </header>
       <main>
         <div id="date-container">
-          <h1 id="day">Monday 22</h1>
-          <span id="month">November</span>
+          <h1 id="day"></h1>
+          <span id="month"></span>
         </div>
         <div id="content-container">
           <div id="side-bar">
             <ul id="side-bar-list">
               <li>
-                <button class="side-bar-btn active-tab">
+                <button
+                  id="in-progress-tab-btn"
+                  class="side-bar-btn active-tab"
+                >
                   <i class="fas fa-bars"></i> In progress
                 </button>
               </li>
               <li>
-                <button class="side-bar-btn">
+                <button id="done-tab-btn" class="side-bar-btn">
                   <i class="fas fa-check"></i> Done
                 </button>
               </li>
             </ul>
+            <div id="notification-message"></div>
           </div>
           <div id="main-content-container">
-            <div id="add-task-container">
+            <form id="add-task-form" autocomplete="off">
               <div id="input-task-container">
                 <input
                   type="text"
+                  id="task-title-input"
                   placeholder="What are your plans?"
-                  maxlength="25"
+                  maxlength="15"
                 />
-                <button><i class="fas fa-plus"></i></button>
+                <button type="submit"><i class="fas fa-plus"></i></button>
               </div>
               <div id="importance-colors-container">
                 <label for="importance">Importance:</label>
@@ -66,97 +64,26 @@
                 <span class="importance-color" id="medium"></span>
                 <span class="importance-color" id="hard"></span>
               </div>
-            </div>
+            </form>
             <div id="main-content">
               <div id="in-progress-tab">
                 <h3>
                   Your Schedule
                   <span class="instructions"
-                    >Righ-clicking on the task will mark it done</span
+                    >Double-click to finish a task or right-click to open more
+                    options</span
                   >
                 </h3>
-                <div id="tasks-container">
-                  <div class="task" data-index="0">
-                    Task 1
-                    <span id="hard" class="importance-level"></span>
-                    <div class="back">
-                      <div class="edit-task">
-                        <i class="fas fa-pencil-alt"></i>
-                      </div>
-                      <div class="delete-task">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="task" data-index="1">
-                    Task 2
-                    <span id="easy" class="importance-level"></span>
-                    <div class="back">
-                      <div class="edit-task">
-                        <i class="fas fa-pencil-alt"></i>
-                      </div>
-                      <div class="delete-task">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="task" data-index="2">
-                    Task 3
-                    <span id="hard" class="importance-level"></span>
-                    <div class="back">
-                      <div class="edit-task">
-                        <i class="fas fa-pencil-alt"></i>
-                      </div>
-                      <div class="delete-task">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="task" data-index="3">
-                    Task 4
-                    <span id="medium" class="importance-level"></span>
-                    <div class="back">
-                      <div class="edit-task">
-                        <i class="fas fa-pencil-alt"></i>
-                      </div>
-                      <div class="delete-task">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="task" data-index="4">
-                    Task 5
-                    <span id="easy" class="importance-level"></span>
-                    <div class="back">
-                      <div class="edit-task">
-                        <i class="fas fa-pencil-alt"></i>
-                      </div>
-                      <div class="delete-task">
-                        <i class="fas fa-trash-alt"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <div id="tasks-container"></div>
               </div>
               <div id="done-tab">
-                <h3>Done Tasks</h3>
-                <div id="done-tasks-container">
-                  <div class="done-task" data-index="0">
-                    <span class="done-task-name">Done Task 1</span>
-                    <i class="fas fa-check"></i>
-                    <div class="back"><i class="fas fa-trash-alt"></i></div>
-                  </div>
-                  <div class="done-task" data-index="1">
-                    <span class="done-task-name">Done Task 2</span>
-                    <i class="fas fa-check"></i>
-                    <div class="back"><i class="fas fa-trash-alt"></i></div>
-                  </div>
-                  <div class="done-task" data-index="2">
-                    <span class="done-task-name">Done Task 3</span>
-                    <i class="fas fa-check"></i>
-                    <div class="back"><i class="fas fa-trash-alt"></i></div>
-                  </div>
-                </div>
+                <h3>
+                  Done Tasks
+                  <span class="instructions"
+                    >Right-click on the task to open more options</span
+                  >
+                </h3>
+                <div id="done-tasks-container"></div>
               </div>
               <div id="empty-schedule">
                 <img src="images/no-tasks.png" alt="" />
