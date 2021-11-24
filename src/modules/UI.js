@@ -160,7 +160,6 @@ export default class UI {
     doneTasksContainer.innerHTML = "";
 
     const doneTasks = Store.getDoneTasks();
-    console.log(doneTasks);
 
     doneTasks.forEach((task, index) => {
       this.createDoneTask(task, index);
